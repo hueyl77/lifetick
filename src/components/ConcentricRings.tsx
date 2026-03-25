@@ -3,11 +3,11 @@
 import { useCountdown } from '@/hooks/useCountdown'
 
 const RINGS = [
-  { key: 'year',   color: '#9B8FE0', r: 130, label: 'Years'   },
-  { key: 'month',  color: '#5DCAA5', r: 113, label: 'Months'  },
-  { key: 'day',    color: '#E8A950', r:  96, label: 'Days'    },
-  { key: 'minute', color: '#D4537E', r:  79, label: 'Minutes' },
-  { key: 'second', color: '#5B9FE8', r:  62, label: 'Seconds' },
+  { key: 'year',   color: '#9B8FE0', r: 138, label: 'Years'   },
+  { key: 'month',  color: '#5DCAA5', r: 121, label: 'Months'  },
+  { key: 'day',    color: '#E8A950', r: 104, label: 'Days'    },
+  { key: 'minute', color: '#D4537E', r:  87, label: 'Minutes' },
+  { key: 'second', color: '#5B9FE8', r:  70, label: 'Seconds' },
 ]
 
 const STROKE = 11
@@ -103,7 +103,7 @@ export default function ConcentricRings({
           lineHeight: 1,
           letterSpacing: '-2px',
         }}>
-          {ageExact.toFixed(1)}
+          {Math.max(0, (lifeExpectancy ?? 0) - ageExact).toFixed(1)}
         </div>
         <div style={{
           fontSize: Math.round(10 * scale),
@@ -111,14 +111,14 @@ export default function ConcentricRings({
           marginTop: 4,
           letterSpacing: '0.04em',
         }}>
-          yrs lived
+          yrs remain
         </div>
         <div style={{
           fontSize: Math.round(11 * scale),
           color: 'var(--text-3)',
           marginTop: 6,
         }}>
-          {countdown.years}y remain
+          {ageExact.toFixed(1)}y lived
         </div>
       </div>
     </div>
