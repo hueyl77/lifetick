@@ -9,6 +9,7 @@ import type { UserProfile } from '@/types'
 
 const STEPS = 4
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ProgressDots({ current }: { current: number }) {
   return (
     <div style={{ display: 'flex', gap: 6, justifyContent: 'center', marginBottom: 24 }}>

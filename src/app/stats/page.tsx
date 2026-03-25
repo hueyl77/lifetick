@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import NavBar from '@/components/NavBar'
 import { useStore } from '@/store/useStore'
-import { formatDelta } from '@/lib/lifeExpectancy'
 
 const IMPROVEMENTS = [
   { action: 'Exercise 3–4× per week (vs 1×)', gain: '+1.5 yrs' },
@@ -18,7 +17,7 @@ export default function StatsPage() {
   const router = useRouter()
   const {
     result, bonusSeconds, profile, onboardingComplete,
-    totalPositiveSeconds, totalNegativeSeconds, streak, logEntries,
+    totalPositiveSeconds, streak, logEntries,
     reset,
   } = useStore()
 

@@ -184,7 +184,7 @@ export default function LogPage() {
               fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase',
               color: 'var(--text-3)', fontWeight: 500, marginBottom: 8, marginTop: 8,
             }}>
-              Today's log
+              Today&apos;s log
             </div>
             <div>
               {todayEntries.map(entry => {

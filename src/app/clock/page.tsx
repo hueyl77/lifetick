@@ -57,7 +57,6 @@ export default function ClockPage() {
 
   const {
     countdown,
-    lifeProgressPct,
     ageExact,
     deathDate,
   } = useCountdown({
