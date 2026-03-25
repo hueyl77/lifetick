@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LifeTick
+
+An app that calculates when you will die, and how much time you have left. Seeing your life ticking away is a great motivator to get fit and healthy and to not waste what little time you have left.
+
+**[Try the demo → lifetick.vercel.app](https://lifetick.vercel.app/)**
+
+## Privacy
+
+It's just for fun — no data is collected. You can watch your network console and confirm nothing leaves your browser. All data is stored locally on your device and you can delete it at any time.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) 14 (App Router)
+- [React](https://react.dev) 18
+- [Zustand](https://zustand.docs.pmnd.rs/) for state management
+- [TypeScript](https://www.typescriptlang.org/)
+- Deployed on [Vercel](https://vercel.com)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Other Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build      # Production build
+npm run lint       # ESLint
+npm run type-check # TypeScript type checking
+```
 
-## Learn More
+## How It Was Built
 
-To learn more about Next.js, take a look at the following resources:
+Built in roughly 3 hours using [Windsurf](https://windsurf.com) on Opus. Not a single line of code was written by hand. No more CSS tweaking and bug hunting — if coded manually it would have taken days to a couple of weeks.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Feedback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Give it a try and let me know your thoughts, or any features you'd like to add. Cheers!
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [LICENSE](./LICENSE) for details.
