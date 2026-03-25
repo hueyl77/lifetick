@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+:root {
+  /* Backgrounds */
+  --bg:           #0A0A0A;
+  --bg-card:      #141414;
+  --bg-elevated:  #1C1C1C;
+  --bg-input:     #1A1A1A;
+
+  /* Borders */
+  --border:       #2A2A2A;
+  --border-mid:   #383838;
+  --border-light: #4A4A4A;
+
+  /* Text */
+  --text:         #F2F0E8;
+  --text-2:       #8A8880;
+  --text-3:       #5A5855;
+
+  /* Ring colors */
+  --ring-year:    #9B8FE0;
+  --ring-month:   #5DCAA5;
+  --ring-day:     #E8A950;
+  --ring-minute:  #D4537E;
+  --ring-second:  #5B9FE8;
+
+  /* Semantic */
+  --pos:          #4CAF7D;
+  --pos-bg:       #1A2E22;
+  --neg:          #E05252;
+  --neg-bg:       #2E1A1A;
+  --warn:         #E8A950;
+
+  /* Fonts */
+  --font-serif:   'Instrument Serif', Georgia, serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  20px;
+  --r-xl:  28px;
+  --r-full: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
+
+/* ── Typography utilities ───────────────────────────────────────────────── */
+.font-serif { font-family: var(--font-serif) !important; }
+
+.label-xs {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+/* ── Ring animation ─────────────────────────────────────────────────────── */
+.ring-arc {
+  transition: stroke-dasharray 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Action card flash ──────────────────────────────────────────────────── */
+@keyframes flashPos {
+  0%   { border-color: var(--pos); background: var(--pos-bg); transform: scale(0.96); }
+  50%  { transform: scale(1.02); }
+  100% { border-color: var(--border); background: var(--bg-card); transform: scale(1); }
+}
+
+@keyframes flashNeg {
+  0%   { border-color: var(--neg); background: var(--neg-bg); transform: scale(0.96); }
+  50%  { transform: scale(1.02); }
+  100% { border-color: var(--border); background: var(--bg-card); transform: scale(1); }
+}
+
+.flash-pos { animation: flashPos 0.65s ease-out forwards; }
+.flash-neg { animation: flashNeg 0.65s ease-out forwards; }
+
+/* ── Pill selector ──────────────────────────────────────────────────────── */
+.pill {
+  padding: 7px 14px;
+  border-radius: var(--r-full);
+  border: 0.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-2);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.pill:hover { border-color: var(--border-mid); color: var(--text); }
+
+.pill.selected {
+  border-color: var(--ring-second);
+  background: rgba(91, 159, 232, 0.12);
+  color: var(--ring-second);
+  font-weight: 500;
+}
+
+/* ── CTA button ─────────────────────────────────────────────────────────── */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--r-md);
+  background: var(--text);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Card ───────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+}
+
+/* ── Toast slide in ─────────────────────────────────────────────────────── */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(0);     opacity: 1; }
+  to   { transform: translateY(-100%); opacity: 0; }
+}
+
+/* ── Tile flash ─────────────────────────────────────────────────────────── */
+@keyframes tilePulse {
+  0%   { background: rgba(91,159,232,0.2); }
+  100% { background: var(--bg-card); }
+}
+
+.tile-flash { animation: tilePulse 0.3s ease-out; }
