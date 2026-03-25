@@ -42,7 +42,6 @@ export default function ConcentricRings({
     minuteProgressPct,
     secondProgressPct,
     ageExact,
-    countdown,
   } = useCountdown({ lifeExpectancy, birthday, bonusSeconds })
 
   const progresses = {
