@@ -3,7 +3,6 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "regions": ["sin1", "iad1"],
   "headers": [
     {
       "source": "/api/(.*)",
